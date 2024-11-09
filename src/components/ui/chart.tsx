@@ -4,6 +4,7 @@ import * as React from "react";
 
 import * as RechartsPrimitive from "recharts";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { cn } from "@/lib/utils";
 
 // Format: { THEME_NAME: CSS_SELECTOR }
