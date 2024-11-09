@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import ContentTextBox from "@/components/ContentTextBox";
+import ContentTextBox from "@/components/content-text-box";
 import {
   Accordion,
   AccordionContent,
@@ -51,7 +51,7 @@ export default function GenerateSectionContent() {
     "Author, A. (2025). Title of the paper. Journal, 10(2), 123-456.",
     "Researcher, B. (2025). Another relevant study. Conference Proceedings, 78-90.",
   ]);
-  const [papers, setPapers] = useState(["Paper 1", "Paper 2", "Paper 3"]);
+  const [papers, setPapers] = useState<Paper[]>([]);
   const [showGeneratedContent, setShowGeneratedContent] = useState(false);
 
   useEffect(() => {
@@ -159,7 +159,7 @@ export default function GenerateSectionContent() {
                 Generate Related Papers
               </Button>
             </div>
-            {papers.map((paper, index) => (
+            {papers.map((paper) => (
               <div key={paper.id} className="flex items-center space-x-2">
                 <Checkbox id={`paper-${paper.id}`} />
                 <label htmlFor={`paper-${paper.id}`} className="text-sm">
